@@ -14,5 +14,17 @@ cd my-app'''
       }
     }
 
+    stage('Compilation') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+
+    stage('Unit tests') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
   }
 }
